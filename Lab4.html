@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ItStep</title>
+    <style>
+        .user-info{
+            padding: 8px;
+            border: 1px #ccc solid;
+            margin-bottom: 20px;
+        
+        }
+
+        .photo-info {
+            padding: 8px;
+            border: 1px #ccc solid;
+            margin-bottom: 20px;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+        }
+        img {
+            width: 80%;
+            height: auto;
+            display: block;
+            margin: 20px auto;
+            border-radius: 10px;
+        }
+
+    </style>
+</head>
+<body >
+    <div id="app"> </div>
+    <div id="app2"></div>
+      
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+     
+   <script type="text/babel">
+
+    const user = {
+        id : 2,
+        age: 1794,
+        townName: 'Odessa',
+        countryName: 'Ukraine',
+        getFullName: function(){ 
+            return `${this.townName} ${this.countryName}`;
+        }
+    };
+    const userClassName = "user-info";
+    const userClassName2 = "photo-info";
+    const styleObj = {
+        color: 'white',
+        fontFamily:'Verdana',
+        backgroundColor: 'blue',
+        borderRadius: '15px'
+       
+    };
+    const styleObj2 = {
+        color: 'black',
+        fontFamily:'Verdana',
+        backgroundColor: 'yellow',
+        borderRadius: '15px'
+    };
+    ReactDOM    
+        .createRoot(document.getElementById("app"))
+        .render(
+            <div className={userClassName}  style={styleObj}>
+                <p>Название города и страны : {user.getFullName()}</p>
+                <p>Год основания: {user.age}</p>
+            </div>
+        );
+        ReactDOM.createRoot(document.getElementById("app2"))
+        .render( 
+                 <div className={userClassName2}  style={styleObj2}>
+                    <img src="licensed-image.jpg" alt="Фото 1: Вид сверху" />
+                    <p>Фото 1: Красивый  вид сверху</p>
+                    <img src="kartinka-8.jpg" alt="Фото 1: Вид моря" />
+                    <p>Фото 2: Красивый  вид моря</p>
+                  </div>
+               );
+   </script>
+</body>
+</html>

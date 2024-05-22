@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ItStep</title>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="container"></div>
+       
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        const styleObj1 = {
+            color: '#333',
+            textAlign: 'center'
+    };
+
+    const styleObj2 = {
+        color: '#555',
+    };
+
+    const styleObj = {
+                border: '2px solid #ccc',
+                borderRadius: '10px',
+                padding: '20px',
+                maxWidth: '400px',
+                margin: '20px auto',
+                backgroundColor: '#f9f9f9'
+            };
+
+        ReactDOM.createRoot(document.getElementById("header"))
+            .render(<h1>Hello React!</h1>);
+ 
+        ReactDOM.createRoot(document.getElementById("container"))
+            .render(
+            <div id="items" style={styleObj}>
+                <h2 style={styleObj1} >Личная информация</h2>
+                <ul>
+                    <li style={styleObj2}><strong>ФИО:</strong>Гребенчук Мария Геннадиевна</li>
+                    <li style={styleObj2}><strong>Телефон:</strong>+380972860462</li>
+                    <li style={styleObj2}><strong>Email:</strong>marya101204@gmail.com</li>
+                </ul>
+            </div>)
+    </script>
+</body>
+</html>
