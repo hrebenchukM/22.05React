@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>ItStep</title>
+    <style>
+      
+        img {
+            width: 70%;
+            height: auto;
+            display: flex;
+            border-radius: 10px;
+            border: 2px #ccc solid;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="header"></div>
+    <div id="container"></div>
+       
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <script type="text/babel">
+        
+        const styleObj1 = {
+            color: '#333',
+            textAlign: 'center'
+    };
+
+    const styleObj2 = {
+        color: '#555',
+    };
+
+    const styleObj = {
+                border: '2px solid #ccc',
+                borderRadius: '10px',
+                padding: '20px',
+                maxWidth: '400px',
+                margin: '20px auto',
+                backgroundColor: '#f9f9f9'
+
+            };
+
+        ReactDOM.createRoot(document.getElementById("header"))
+            .render(<h1>Hello React!</h1>);
+ 
+        ReactDOM.createRoot(document.getElementById("container"))
+            .render(
+            <div id="items" style={styleObj}>
+                <h2 style={styleObj1} >Любимейшая музыкальная группа</h2>
+                <ul>
+                    <img src="ID.jpeg" alt="Фото с концерта" />
+                    <li style={styleObj2}><strong>Название:</strong>Imagine Dragons</li>
+                    <li style={styleObj2}><strong>Участники:</strong>Дэн Рейнольдс,Бен Макки,Уэйн Сермон,Ден Плацман.</li>
+                    <li style={styleObj2}><strong>Популярные альбомы:</strong>Origins,Evolve,Smoke + Mirrors,Night Visions.</li>
+                </ul>
+                    <img src="111.jpg" alt="Фото 1: Origins" />
+                    <p>Фото 1: Origins</p>
+                    <img src="2.jpg" alt="Фото 2: Evolve" />
+                    <p>Фото 2: Evolve</p>
+                    <img src="3.jpg" alt="Фото 3: Smoke + Mirrors" />
+                    <p>Фото 3: Smoke + Mirrors</p>
+                    <img src="4.jpg" alt="Фото 4: Night Visions" />
+                    <p>Фото 4: Night Visions</p>
+            </div>)
+    </script>
+</body>
+</html>
